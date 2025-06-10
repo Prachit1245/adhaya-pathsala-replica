@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-orange-400 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-orange-100 text-sm">
-              © 2024 Adhaya Pathshala. All rights reserved. सरकार सहित्को शिक्षा
+              © 2024 Adhaya Pathshala. All rights reserved. संस्कार सहितको शिक्षा
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-orange-100 hover:text-white text-sm transition-colors">Privacy Policy</a>

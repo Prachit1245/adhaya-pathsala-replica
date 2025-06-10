@@ -18,7 +18,7 @@ const Hero = () => {
                 Excellence in Education - Shaping Future Leaders Through Quality Higher Secondary Education in Science, Management, Humanities, and Law.
               </p>
               <p className="text-lg text-gray-500">
-                सरकार सहित्को शिक्षा - Empowering students with comprehensive +2 programs
+                संस्कार सहितको शिक्षा - Empowering students with comprehensive +2 programs
               </p>
             </div>
 

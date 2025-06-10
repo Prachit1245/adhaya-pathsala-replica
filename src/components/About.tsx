@@ -43,7 +43,7 @@ const About = () => {
                 Adhaya Pathshala is a premier educational institution dedicated to providing excellence in higher secondary education. We offer comprehensive +2 programs in Science, Management, Humanities, and Law, designed to prepare students for successful university education and meaningful careers.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our commitment to "सरकार सहित्को शिक्षा" reflects our dedication to government-affiliated, quality education that meets national standards while fostering innovation and critical thinking.
+                Our commitment to "संस्कार सहितको शिक्षा" reflects our dedication to government-affiliated, quality education that meets national standards while fostering innovation and critical thinking.
               </p>
             </div>
 
