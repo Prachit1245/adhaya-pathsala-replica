@@ -120,15 +120,15 @@ const Admissions = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Card className="bg-gradient-to-r from-orange-500 to-teal-600 text-white inline-block">
+          <Card className="bg-white border-2 border-orange-500 shadow-lg inline-block">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
-              <p className="mb-6">Download our application form and start your journey with us</p>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">Ready to Apply?</h3>
+              <p className="mb-6 text-gray-600">Download our application form and start your journey with us</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 px-8">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8">
                   Download Application
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500 px-8">
+                <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8">
                   Contact Admissions
                 </Button>
               </div>
