@@ -6,17 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, Globe } from "lucide-react";
 
 const Contact = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "9799840065951"; // Nepal country code + number
-    const message = "Hello! I would like to schedule a campus visit and personal consultation at Adhaya Pathshala.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Contact Us
           </h2>
@@ -27,12 +20,12 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <Card className="bg-white shadow-lg animate-scale-in hover:shadow-xl transition-shadow duration-300">
+            <Card className="bg-white shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl text-gray-800">Get In Touch</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-start space-x-4 hover:bg-orange-50 p-3 rounded-lg transition-colors duration-200">
+                <div className="flex items-start space-x-4">
                   <div className="bg-orange-100 p-3 rounded-lg">
                     <Phone className="text-orange-500" size={24} />
                   </div>
@@ -42,7 +35,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 hover:bg-teal-50 p-3 rounded-lg transition-colors duration-200">
+                <div className="flex items-start space-x-4">
                   <div className="bg-teal-100 p-3 rounded-lg">
                     <Mail className="text-teal-600" size={24} />
                   </div>
@@ -52,7 +45,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 hover:bg-orange-50 p-3 rounded-lg transition-colors duration-200">
+                <div className="flex items-start space-x-4">
                   <div className="bg-orange-100 p-3 rounded-lg">
                     <Globe className="text-orange-500" size={24} />
                   </div>
@@ -62,7 +55,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 hover:bg-teal-50 p-3 rounded-lg transition-colors duration-200">
+                <div className="flex items-start space-x-4">
                   <div className="bg-teal-100 p-3 rounded-lg">
                     <MapPin className="text-teal-600" size={24} />
                   </div>
@@ -72,7 +65,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 hover:bg-orange-50 p-3 rounded-lg transition-colors duration-200">
+                <div className="flex items-start space-x-4">
                   <div className="bg-orange-100 p-3 rounded-lg">
                     <Clock className="text-orange-500" size={24} />
                   </div>
@@ -85,23 +78,18 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-orange-500 to-teal-600 text-white animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="bg-gradient-to-br from-orange-500 to-teal-600 text-white">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4 animate-pulse">Inquiry Open</h3>
+                <h3 className="text-2xl font-bold mb-4">Inquiry Open</h3>
                 <p className="mb-6">Visit our campus for a personal consultation and campus tour</p>
-                <Button 
-                  size="lg" 
-                  className="bg-white text-orange-500 hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg"
-                  onClick={handleWhatsAppClick}
-                >
+                <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
                   Schedule a Visit
                 </Button>
-                <p className="text-sm mt-4 opacity-90">+977 9840065951</p>
               </CardContent>
             </Card>
           </div>
 
-          <Card className="bg-white shadow-lg animate-scale-in hover:shadow-xl transition-shadow duration-300">
+          <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl text-gray-800">Send us a Message</CardTitle>
             </CardHeader>
@@ -112,13 +100,13 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
-                    <Input placeholder="Enter your first name" className="transition-all duration-200 focus:scale-105" />
+                    <Input placeholder="Enter your first name" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name
                     </label>
-                    <Input placeholder="Enter your last name" className="transition-all duration-200 focus:scale-105" />
+                    <Input placeholder="Enter your last name" />
                   </div>
                 </div>
 
@@ -126,21 +114,21 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email
                   </label>
-                  <Input type="email" placeholder="Enter your email address" className="transition-all duration-200 focus:scale-105" />
+                  <Input type="email" placeholder="Enter your email address" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number
                   </label>
-                  <Input placeholder="Enter your phone number" className="transition-all duration-200 focus:scale-105" />
+                  <Input placeholder="Enter your phone number" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Interested Faculty
                   </label>
-                  <select className="w-full p-3 border border-gray-300 rounded-md transition-all duration-200 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                  <select className="w-full p-3 border border-gray-300 rounded-md">
                     <option>Select a faculty</option>
                     <option>Science</option>
                     <option>Management</option>
@@ -156,11 +144,10 @@ const Contact = () => {
                   <Textarea 
                     placeholder="Tell us about your inquiry or any questions you have..."
                     rows={4}
-                    className="transition-all duration-200 focus:scale-105"
                   />
                 </div>
 
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 hover:scale-105 transition-all duration-300">
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3">
                   Send Message
                 </Button>
               </form>
