@@ -123,3 +123,44 @@ section {
     max-height: 60px;
     width: auto;
 }
+
+/* Ensure orange theme consistency */
+.bg-orange-500 {
+    background-color: #f59e0b !important;
+}
+
+.hover\:bg-orange-600:hover {
+    background-color: #d97706 !important;
+}
+
+.text-orange-500 {
+    color: #f59e0b !important;
+}
+
+.border-orange-500 {
+    border-color: #f59e0b !important;
+}
+
+.hover\:bg-orange-500:hover {
+    background-color: #f59e0b !important;
+}
+
+/* Mobile menu styling */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    display: none;
+}
+
+/* Ensure proper logo sizing */
+header img {
+    max-height: 64px;
+    width: auto;
+}
+
+footer img {
+    max-height: 64px;
+    width: auto;
+}
