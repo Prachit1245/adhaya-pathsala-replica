@@ -3,16 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhaya Pathshala - Excellence in Higher Secondary Education</title>
-    <meta name="description" content="Adhaya Pathshala offers quality +2 education in Science, Management, Humanities, and Law. Government affiliated institution in Gaushala, Kathmandu." />
+    <title>Adhyaya Pathshala - Excellence in Higher Secondary Education</title>
+    <meta name="description" content="Adhyaya Pathshala offers quality +2 education in Science, Management, Law, and Humanities. Government affiliated institution in Gaushala, Kathmandu." />
     <link rel="icon" href="./assets/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-4 max-w-md mx-4 relative">
+            <button id="close-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            <img src="/lovable-uploads/c20355da-9e74-43bf-9195-b8f3677b2e62.png" alt="Adhyaya Pathshala Admission" class="w-full rounded cursor-pointer" onclick="openInquiryForm()">
+        </div>
+    </div>
+
+    <!-- Inquiry Form Modal -->
+    <div id="inquiry-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-8 max-w-lg mx-4 relative max-h-screen overflow-y-auto">
+            <button id="close-inquiry" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Inquiry Form</h2>
+            <form id="inquiry-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Student Name *</label>
+                    <input type="text" name="studentName" required class="w-full p-3 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">School Name (SEE School) *</label>
+                    <input type="text" name="schoolName" required class="w-full p-3 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">SEE GPA *</label>
+                    <input type="number" step="0.01" min="0" max="4" name="seeGpa" required class="w-full p-3 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Program Choice *</label>
+                    <select name="program" required class="w-full p-3 border border-gray-300 rounded-md">
+                        <option value="">Select a program</option>
+                        <option value="Science">Science</option>
+                        <option value="Management">Management</option>
+                        <option value="Law">Law</option>
+                        <option value="Humanities">Humanities</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Contact Number *</label>
+                    <input type="tel" name="contactNumber" required class="w-full p-3 border border-gray-300 rounded-md">
+                </div>
+                <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded transition-colors">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-md sticky top-0 z-40">
         <!-- Top bar -->
         <div class="bg-gray-800 text-white py-2">
             <div class="container mx-auto px-4 flex justify-between items-center text-sm">
@@ -36,7 +83,7 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="assets/logo.png" alt="Adhaya Pathshala Logo" class="h-16 w-auto">
+                    <img src="assets/logo.png" alt="Adhyaya Pathshala Logo" class="h-16 w-auto">
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -81,11 +128,11 @@
                 <div class="space-y-8">
                     <div class="space-y-6">
                         <h1 class="text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
-                            Welcome to <span class="text-orange-500">Adhaya</span><br>
+                            Welcome to <span class="text-orange-500">Adhyaya</span><br>
                             <span class="text-teal-600">Pathshala</span>
                         </h1>
                         <p class="text-xl text-gray-600 leading-relaxed">
-                            Excellence in Education - Shaping Future Leaders Through Quality Higher Secondary Education in Science, Management, Humanities, and Law.
+                            Excellence in Education - Shaping Future Leaders Through Quality Higher Secondary Education in Science, Management, Law and Humanities.
                         </p>
                         <p class="text-lg text-gray-500">
                             संस्कार सहितको शिक्षा - Empowering students with comprehensive +2 programs
@@ -96,7 +143,7 @@
                         <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded text-lg transition-colors">
                             JOIN NOW
                         </button>
-                        <button class="border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-3 rounded text-lg transition-colors">
+                        <button onclick="openInquiryForm()" class="border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-3 rounded text-lg transition-colors">
                             Inquiry Open
                         </button>
                     </div>
@@ -155,10 +202,10 @@
                 <div class="space-y-8">
                     <div>
                         <h2 class="text-4xl font-bold text-gray-800 mb-6">
-                            About <span class="text-orange-500">Adhaya Pathshala</span>
+                            About <span class="text-orange-500">Adhyaya Pathshala</span>
                         </h2>
                         <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                            Adhaya Pathshala is a premier educational institution dedicated to providing excellence in higher secondary education. We offer comprehensive +2 programs in Science, Management, Humanities, and Law, designed to prepare students for successful university education and meaningful careers.
+                            Adhyaya Pathshala is a premier educational institution dedicated to providing excellence in higher secondary education. We offer comprehensive +2 programs in Science, Management, Law and Humanities, designed to prepare students for successful university education and meaningful careers.
                         </p>
                         <p class="text-lg text-gray-600 leading-relaxed">
                             Our commitment to "संस्कार सहितको शिक्षा" reflects our dedication to government-affiliated, quality education that meets national standards while fostering innovation and critical thinking.
@@ -221,7 +268,7 @@
                         <h3 class="text-2xl font-bold text-gray-800">SCIENCE</h3>
                     </div>
                     <p class="text-gray-600 text-center mb-4">
-                        Comprehensive science education with Physics, Chemistry, Biology, and Mathematics
+                        Comprehensive science education with Physics, Chemistry, Biology and Mathematics
                     </p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-700">
@@ -254,7 +301,7 @@
                         <h3 class="text-2xl font-bold text-gray-800">MANAGEMENT</h3>
                     </div>
                     <p class="text-gray-600 text-center mb-4">
-                        Business and management studies preparing students for the corporate world
+                        Business and management studies with Computer Science and Hotel Management focus
                     </p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-700">
@@ -263,51 +310,18 @@
                         </li>
                         <li class="flex items-center text-sm text-gray-700">
                             <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Economics
+                            Computer Science
                         </li>
                         <li class="flex items-center text-sm text-gray-700">
                             <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Accounting
+                            Hotel Management
                         </li>
                         <li class="flex items-center text-sm text-gray-700">
                             <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Marketing
+                            Economics & Accounting
                         </li>
                     </ul>
                     <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded transition-colors">
-                        Learn More
-                    </button>
-                </div>
-
-                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-center mb-4">
-                        <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-md">
-                            <i class="fas fa-book-open text-purple-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800">HUMANITIES</h3>
-                    </div>
-                    <p class="text-gray-600 text-center mb-4">
-                        Liberal arts education focusing on human culture, literature, and social sciences
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-700">
-                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Literature
-                        </li>
-                        <li class="flex items-center text-sm text-gray-700">
-                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            History
-                        </li>
-                        <li class="flex items-center text-sm text-gray-700">
-                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Sociology
-                        </li>
-                        <li class="flex items-center text-sm text-gray-700">
-                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            Psychology
-                        </li>
-                    </ul>
-                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded transition-colors">
                         Learn More
                     </button>
                 </div>
@@ -344,6 +358,39 @@
                         Learn More
                     </button>
                 </div>
+
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-md">
+                            <i class="fas fa-book-open text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">HUMANITIES</h3>
+                    </div>
+                    <p class="text-gray-600 text-center mb-4">
+                        Liberal arts education focusing on human culture, literature and social sciences
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-700">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                            Literature
+                        </li>
+                        <li class="flex items-center text-sm text-gray-700">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                            History
+                        </li>
+                        <li class="flex items-center text-sm text-gray-700">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                            Sociology
+                        </li>
+                        <li class="flex items-center text-sm text-gray-700">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                            Psychology
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded transition-colors">
+                        Learn More
+                    </button>
+                </div>
             </div>
 
             <div class="text-center mt-12">
@@ -369,7 +416,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Admission Process</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Join Adhaya Pathshala and take the first step towards your academic excellence
+                    Join Adhyaya Pathshala and take the first step towards your academic excellence
                 </p>
             </div>
 
@@ -531,9 +578,9 @@
         <div class="container mx-auto px-4 py-12">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="space-y-4">
-                    <img src="assets/logo.png" alt="Adhaya Pathshala Logo" class="h-16 w-auto">
+                    <img src="assets/logo.png" alt="Adhyaya Pathshala Logo" class="h-16 w-auto">
                     <p class="text-orange-100 leading-relaxed">
-                        Adhaya Pathshala - Excellence in Higher Secondary Education. Empowering students with quality education and shaping future leaders.
+                        Adhyaya Pathshala - Excellence in Higher Secondary Education. Empowering students with quality education and shaping future leaders.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="bg-white text-orange-500 p-2 rounded-full hover:bg-orange-100 transition-colors">
@@ -595,7 +642,7 @@
             <div class="border-t border-orange-400 mt-12 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-orange-100 text-sm">
-                        © 2024 Adhaya Pathshala. All rights reserved. संस्कार सहितको शिक्षा
+                        © 2024 Adhyaya Pathshala. All rights reserved. संस्कार सहितको शिक्षा
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
                         <a href="#" class="text-orange-100 hover:text-white text-sm transition-colors">Privacy Policy</a>

@@ -10,12 +10,12 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
-                Welcome to <span className="text-orange-500">Adhaya</span>
+                Welcome to <span className="text-orange-500">Adhyaya</span>
                 <br />
                 <span className="text-teal-600">Pathshala</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Excellence in Education - Shaping Future Leaders Through Quality Higher Secondary Education in Science, Management, Humanities, and Law.
+                Excellence in Education - Shaping Future Leaders Through Quality Higher Secondary Education in Science, Management, Law and Humanities.
               </p>
               <p className="text-lg text-gray-500">
                 संस्कार सहितको शिक्षा - Empowering students with comprehensive +2 programs

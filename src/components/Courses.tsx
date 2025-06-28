@@ -8,7 +8,7 @@ const Courses = () => {
     {
       title: "SCIENCE",
       icon: Microscope,
-      description: "Comprehensive science education with Physics, Chemistry, Biology, and Mathematics",
+      description: "Comprehensive science education with Physics, Chemistry, Biology and Mathematics",
       features: ["Laboratory Facilities", "Experienced Faculty", "Practical Learning", "Career Guidance"],
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600",
@@ -17,20 +17,11 @@ const Courses = () => {
     {
       title: "MANAGEMENT",
       icon: Calculator,
-      description: "Business and management studies preparing students for the corporate world",
-      features: ["Business Studies", "Economics", "Accounting", "Marketing"],
+      description: "Business and management studies with Computer Science and Hotel Management focus",
+      features: ["Business Studies", "Computer Science", "Hotel Management", "Economics & Accounting"],
       color: "bg-green-50 border-green-200",
       iconColor: "text-green-600",
       buttonColor: "bg-green-600 hover:bg-green-700"
-    },
-    {
-      title: "HUMANITIES",
-      icon: BookOpen,
-      description: "Liberal arts education focusing on human culture, literature, and social sciences",
-      features: ["Literature", "History", "Sociology", "Psychology"],
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-600",
-      buttonColor: "bg-purple-600 hover:bg-purple-700"
     },
     {
       title: "LAW",
@@ -40,6 +31,15 @@ const Courses = () => {
       color: "bg-amber-50 border-amber-200",
       iconColor: "text-amber-600",
       buttonColor: "bg-amber-600 hover:bg-amber-700"
+    },
+    {
+      title: "HUMANITIES",
+      icon: BookOpen,
+      description: "Liberal arts education focusing on human culture, literature and social sciences",
+      features: ["Literature", "History", "Sociology", "Psychology"],
+      color: "bg-purple-50 border-purple-200",
+      iconColor: "text-purple-600",
+      buttonColor: "bg-purple-600 hover:bg-purple-700"
     }
   ];
 
