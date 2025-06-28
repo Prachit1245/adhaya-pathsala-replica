@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const popupModal = document.getElementById('popup-modal');
         if (popupModal) {
             popupModal.classList.remove('hidden');
+            console.log('Popup should be visible now');
         }
     }, 2000); // Show after 2 seconds
     
@@ -81,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form submission handler
-    const contactForm = document.querySelector('form');
-    if (contactForm && !contactForm.id) {
+    // Form submission handler for contact form
+    const contactForm = document.querySelector('form:not(#inquiry-form)');
+    if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
@@ -121,17 +122,7 @@ This inquiry was submitted through the website inquiry form.
         });
     }
     
-    // Handle all "Inquiry Open" buttons
-    const inquiryButtons = document.querySelectorAll('button');
-    inquiryButtons.forEach(button => {
-        if (button.textContent.includes('Inquiry Open')) {
-            button.addEventListener('click', function() {
-                openInquiryForm();
-            });
-        }
-    });
-    
-    // Button click handlers for other buttons
+    // Handle all buttons with specific text content
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         if (button.textContent.includes('Apply Now') || 
@@ -140,7 +131,18 @@ This inquiry was submitted through the website inquiry form.
             button.textContent.includes('Apply for Admission') ||
             button.textContent.includes('Download Application')) {
             button.addEventListener('click', function() {
-                alert('Admissions are open! Please contact us at +977 9840065951 or info@adhaya.edu.np for more information.');
+                if (!button.onclick) { // Only add if no onclick already defined
+                    alert('Admissions are open! Please contact us at +977 9840065951 or info@adhaya.edu.np for more information.');
+                }
+            });
+        }
+        if (button.textContent.includes('Inquiry Open') || 
+            button.textContent.includes('Download Prospectus') ||
+            button.textContent.includes('Contact Admissions')) {
+            button.addEventListener('click', function() {
+                if (!button.onclick) { // Only add if no onclick already defined
+                    openInquiryForm();
+                }
             });
         }
     });
@@ -148,6 +150,7 @@ This inquiry was submitted through the website inquiry form.
 
 // Function to open inquiry form
 function openInquiryForm() {
+    console.log('Opening inquiry form');
     const popupModal = document.getElementById('popup-modal');
     const inquiryModal = document.getElementById('inquiry-modal');
     
