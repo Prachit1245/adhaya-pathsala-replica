@@ -1,6 +1,8 @@
 
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing...');
+    
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (popupModal) {
             popupModal.classList.remove('hidden');
             console.log('Popup should be visible now');
+        } else {
+            console.log('Popup modal not found');
         }
     }, 2000); // Show after 2 seconds
     
@@ -121,31 +125,6 @@ This inquiry was submitted through the website inquiry form.
             this.reset();
         });
     }
-    
-    // Handle all buttons with specific text content
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        if (button.textContent.includes('Apply Now') || 
-            button.textContent.includes('JOIN NOW') ||
-            button.textContent.includes('Learn More') ||
-            button.textContent.includes('Apply for Admission') ||
-            button.textContent.includes('Download Application')) {
-            button.addEventListener('click', function() {
-                if (!button.onclick) { // Only add if no onclick already defined
-                    alert('Admissions are open! Please contact us at +977 9840065951 or info@adhaya.edu.np for more information.');
-                }
-            });
-        }
-        if (button.textContent.includes('Inquiry Open') || 
-            button.textContent.includes('Download Prospectus') ||
-            button.textContent.includes('Contact Admissions')) {
-            button.addEventListener('click', function() {
-                if (!button.onclick) { // Only add if no onclick already defined
-                    openInquiryForm();
-                }
-            });
-        }
-    });
 });
 
 // Function to open inquiry form
@@ -159,5 +138,8 @@ function openInquiryForm() {
     }
     if (inquiryModal) {
         inquiryModal.classList.remove('hidden');
+        console.log('Inquiry form opened');
+    } else {
+        console.log('Inquiry modal not found');
     }
 }
