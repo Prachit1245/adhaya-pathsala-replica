@@ -33,32 +33,53 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Show popup on page load
     setTimeout(function() {
-        document.getElementById('popup-modal').classList.remove('hidden');
+        const popupModal = document.getElementById('popup-modal');
+        if (popupModal) {
+            popupModal.classList.remove('hidden');
+        }
     }, 2000); // Show after 2 seconds
     
     // Close popup functionality
-    document.getElementById('close-popup').addEventListener('click', function() {
-        document.getElementById('popup-modal').classList.add('hidden');
-    });
+    const closePopupBtn = document.getElementById('close-popup');
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', function() {
+            const popupModal = document.getElementById('popup-modal');
+            if (popupModal) {
+                popupModal.classList.add('hidden');
+            }
+        });
+    }
     
     // Close popup when clicking outside
-    document.getElementById('popup-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-        }
-    });
+    const popupModal = document.getElementById('popup-modal');
+    if (popupModal) {
+        popupModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+    }
     
     // Close inquiry modal
-    document.getElementById('close-inquiry').addEventListener('click', function() {
-        document.getElementById('inquiry-modal').classList.add('hidden');
-    });
+    const closeInquiryBtn = document.getElementById('close-inquiry');
+    if (closeInquiryBtn) {
+        closeInquiryBtn.addEventListener('click', function() {
+            const inquiryModal = document.getElementById('inquiry-modal');
+            if (inquiryModal) {
+                inquiryModal.classList.add('hidden');
+            }
+        });
+    }
     
     // Close inquiry modal when clicking outside
-    document.getElementById('inquiry-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-        }
-    });
+    const inquiryModal = document.getElementById('inquiry-modal');
+    if (inquiryModal) {
+        inquiryModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+    }
     
     // Form submission handler
     const contactForm = document.querySelector('form');
@@ -100,7 +121,17 @@ This inquiry was submitted through the website inquiry form.
         });
     }
     
-    // Button click handlers
+    // Handle all "Inquiry Open" buttons
+    const inquiryButtons = document.querySelectorAll('button');
+    inquiryButtons.forEach(button => {
+        if (button.textContent.includes('Inquiry Open')) {
+            button.addEventListener('click', function() {
+                openInquiryForm();
+            });
+        }
+    });
+    
+    // Button click handlers for other buttons
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         if (button.textContent.includes('Apply Now') || 
@@ -117,6 +148,13 @@ This inquiry was submitted through the website inquiry form.
 
 // Function to open inquiry form
 function openInquiryForm() {
-    document.getElementById('popup-modal').classList.add('hidden');
-    document.getElementById('inquiry-modal').classList.remove('hidden');
+    const popupModal = document.getElementById('popup-modal');
+    const inquiryModal = document.getElementById('inquiry-modal');
+    
+    if (popupModal) {
+        popupModal.classList.add('hidden');
+    }
+    if (inquiryModal) {
+        inquiryModal.classList.remove('hidden');
+    }
 }
