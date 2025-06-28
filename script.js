@@ -55,6 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Popup image click to open inquiry form
+    const popupImage = document.getElementById('popup-image');
+    if (popupImage) {
+        popupImage.addEventListener('click', function() {
+            openInquiryForm();
+        });
+    }
+    
     // Close popup when clicking outside
     const popupModal = document.getElementById('popup-modal');
     if (popupModal) {
@@ -125,6 +133,14 @@ This inquiry was submitted through the website inquiry form.
             this.reset();
         });
     }
+    
+    // Add event listeners to all inquiry buttons
+    const inquiryButtons = document.querySelectorAll('.inquiry-open-btn, .apply-now-btn, .join-now-btn, .apply-admission-btn, .download-prospectus-btn, .download-application-btn, .contact-admissions-btn');
+    inquiryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            openInquiryForm();
+        });
+    });
 });
 
 // Function to open inquiry form
